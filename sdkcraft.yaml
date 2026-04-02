@@ -1,0 +1,37 @@
+name: ollama
+adopt-info: ollama
+summary: Get up and running with large language models
+description: |
+  Get up and running with Llama 3.3, DeepSeek-R1, Phi-4,
+  Gemma 3, Mistral Small 3.1 and other large language models.
+license: MIT
+platforms:
+  ubuntu@22.04:amd64:
+  ubuntu@24.04:amd64:
+
+plugs:
+  gpu:
+    interface: gpu
+  models:
+    interface: mount
+    workshop-target: /home/workshop/.ollama/models
+
+slots:
+  ollama-server:
+    interface: tunnel
+    endpoint: 11434
+
+parts:
+  ollama:
+    plugin: dump
+    source: .
+    override-pull: |
+      VERSION=$(cat "$CRAFT_PROJECT_DIR/VERSION")
+      craftctl set version="$VERSION"
+      curl -fLO "https://github.com/ollama/ollama/releases/download/v${VERSION}/ollama-linux-amd64.tgz"
+      tar -xzf "ollama-linux-amd64.tgz" -C "$CRAFT_PART_SRC"
+      rm "ollama-linux-amd64.tgz"
+  services:
+    plugin: dump
+    source: services
+    source-type: local

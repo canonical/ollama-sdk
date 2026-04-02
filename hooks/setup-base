@@ -1,0 +1,3 @@
+cat <<EOF >/etc/profile.d/ollama.sh
+export PATH="$SDK/bin:\$PATH"
+EOF

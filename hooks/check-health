@@ -1,0 +1,5 @@
+if ! output=$(sudo -u workshop --login ollama list 2>&1); then
+  workshopctl set-health waiting "$output"
+  exit
+fi
+workshopctl set-health okay

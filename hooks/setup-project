@@ -1,0 +1,4 @@
+install -D --mode=644 --target-directory ~/.config/systemd/user "$SDK/ollama.service"
+
+systemctl --user daemon-reload
+systemctl --user enable --now ollama

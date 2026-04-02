@@ -28,9 +28,9 @@ parts:
     override-pull: |
       VERSION=$(cat "$CRAFT_PROJECT_DIR/VERSION")
       craftctl set version="$VERSION"
-      curl -fLO "https://github.com/ollama/ollama/releases/download/v${VERSION}/ollama-linux-amd64.tgz"
-      tar -xzf "ollama-linux-amd64.tgz" -C "$CRAFT_PART_SRC"
-      rm "ollama-linux-amd64.tgz"
+      curl -fLO "https://github.com/ollama/ollama/releases/download/v${VERSION}/ollama-linux-amd64.tar.zst"
+      tar -xf "ollama-linux-amd64.tar.zst" -C "$CRAFT_PART_SRC"
+      rm "ollama-linux-amd64.tar.zst"
   services:
     plugin: dump
     source: services

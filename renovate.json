@@ -20,12 +20,13 @@
     }
   ],
   "baseBranchPatterns": [
-    "latest"
+    "latest",
+    "vulkan"
   ],
   "packageRules": [
     {
       "matchPackageNames": ["ollama/ollama"],
-      "matchBaseBranches": ["latest"]
+      "matchBaseBranches": ["latest", "vulkan"]
     }
   ]
 }

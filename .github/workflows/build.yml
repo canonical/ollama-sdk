@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - latest
+      - vulkan
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}

@@ -21,12 +21,13 @@
   ],
   "baseBranchPatterns": [
     "latest",
+    "rocm",
     "vulkan"
   ],
   "packageRules": [
     {
       "matchPackageNames": ["ollama/ollama"],
-      "matchBaseBranches": ["latest", "vulkan"]
+      "matchBaseBranches": ["latest", "rocm", "vulkan"]
     }
   ]
 }

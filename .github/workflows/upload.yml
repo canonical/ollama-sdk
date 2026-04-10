@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - latest
+      - rocm
       - vulkan
   workflow_dispatch:
     inputs:

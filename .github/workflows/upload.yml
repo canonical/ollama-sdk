@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - cpu
+      - cuda
       - latest
       - rocm
       - vulkan

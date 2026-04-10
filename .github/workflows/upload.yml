@@ -3,7 +3,10 @@ name: Build and Upload SDK
 on:
   push:
     branches:
+      - cpu
+      - cuda
       - latest
+      - rocm
       - vulkan
   workflow_dispatch:
     inputs:

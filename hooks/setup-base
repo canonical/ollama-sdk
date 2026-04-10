@@ -1,3 +1,7 @@
 cat <<EOF >/etc/profile.d/ollama.sh
 export PATH="$SDK/bin:\$PATH"
+export OLLAMA_VULKAN=1
 EOF
+
+apt-get update
+apt-get install mesa-vulkan-drivers

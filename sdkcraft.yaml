@@ -10,8 +10,6 @@ platforms:
   ubuntu@24.04:amd64:
 
 plugs:
-  gpu:
-    interface: gpu
   models:
     interface: mount
     workshop-target: /home/workshop/.ollama/models

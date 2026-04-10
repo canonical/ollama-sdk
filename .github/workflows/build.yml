@@ -3,6 +3,7 @@ name: Build SDK
 on:
   pull_request:
     branches:
+      - cpu
       - latest
       - rocm
       - vulkan

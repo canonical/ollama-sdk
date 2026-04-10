@@ -3,6 +3,7 @@ name: Build and Upload SDK
 on:
   push:
     branches:
+      - cpu
       - latest
       - rocm
       - vulkan

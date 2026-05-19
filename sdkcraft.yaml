@@ -7,7 +7,9 @@ description: |
 license: MIT
 platforms:
   ubuntu@22.04:amd64:
+  ubuntu@22.04:arm64:
   ubuntu@24.04:amd64:
+  ubuntu@24.04:arm64:
 
 plugs:
   gpu:
@@ -28,9 +30,10 @@ parts:
     override-pull: |
       VERSION=$(cat "$CRAFT_PROJECT_DIR/VERSION")
       craftctl set version="$VERSION"
-      curl -fLO "https://github.com/ollama/ollama/releases/download/v${VERSION}/ollama-linux-amd64.tar.zst"
-      tar -xf "ollama-linux-amd64.tar.zst" -C "$CRAFT_PART_SRC"
-      rm "ollama-linux-amd64.tar.zst"
+      ARCH="$CRAFT_ARCH_BUILD_FOR"
+      curl -fLO "https://github.com/ollama/ollama/releases/download/v${VERSION}/ollama-linux-${ARCH}.tar.zst"
+      tar -xf "ollama-linux-${ARCH}.tar.zst" -C "$CRAFT_PART_SRC"
+      rm "ollama-linux-${ARCH}.tar.zst"
   services:
     plugin: dump
     source: services

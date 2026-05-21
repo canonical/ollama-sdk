@@ -22,8 +22,16 @@ concurrency:
 jobs:
   build-and-upload:
     uses: canonical/sdkcraft-actions/.github/workflows/upload.yml@main
+    strategy:
+      matrix:
+        include:
+          - platforms: [ubuntu@22.04:amd64, ubuntu@24.04:amd64]
+            runs-on: [self-hosted, linux, jammy, x64, xlarge]
+          - platforms: [ubuntu@22.04:arm64, ubuntu@24.04:arm64]
+            runs-on: [self-hosted, linux, jammy, ARM64, xlarge]
     with:
-      platforms: '["ubuntu@22.04:amd64","ubuntu@24.04:amd64"]'
+      runs-on: ${{ toJSON(matrix.runs-on) }}
+      platforms: ${{ toJSON(matrix.platforms) }}
       platform-flag: "--platform"
       risk: "stable"
     secrets:

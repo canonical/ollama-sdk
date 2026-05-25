@@ -3,6 +3,8 @@ name: Build and Upload SDK
 on:
   push:
     branches:
+      - cpu
+      - cuda
       - latest
       - rocm
       - vulkan
@@ -25,4 +27,4 @@ jobs:
       platform-flag: "--platform"
       risk: "stable"
     secrets:
-      SDKCRAFT_STORE_CREDENTIALS: ${{ secrets.SDKCRAFT_STORE_CREDENTIALS_STAGING }}
+      SDKCRAFT_STORE_CREDENTIALS: ${{ secrets.SDKCRAFT_STORE_CREDENTIALS_PROD }}

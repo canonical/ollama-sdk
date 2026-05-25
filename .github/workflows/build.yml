@@ -3,6 +3,8 @@ name: Build SDK
 on:
   pull_request:
     branches:
+      - cpu
+      - cuda
       - latest
       - rocm
       - vulkan

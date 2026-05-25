@@ -20,6 +20,8 @@
     }
   ],
   "baseBranchPatterns": [
+    "cpu",
+    "cuda",
     "latest",
     "rocm",
     "vulkan"
@@ -27,7 +29,7 @@
   "packageRules": [
     {
       "matchPackageNames": ["ollama/ollama"],
-      "matchBaseBranches": ["latest", "rocm", "vulkan"]
+      "matchBaseBranches": ["cpu", "cuda", "latest", "rocm", "vulkan"]
     }
   ]
 }

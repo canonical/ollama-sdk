@@ -32,7 +32,7 @@ parts:
       tar -xf "ollama-linux-amd64.tar.zst" -C "$CRAFT_PART_SRC"
       rm "ollama-linux-amd64.tar.zst"
       cd "$CRAFT_PART_SRC/lib/ollama"
-      rm -r cuda_v*/ mlx_cuda_v*/ include
+      rm -r cuda_v*/
   ollama-rocm:
     plugin: dump
     source: .

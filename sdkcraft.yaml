@@ -6,6 +6,7 @@ description: |
   Gemma 3, Mistral Small 3.1 and other large language models.
 license: MIT
 platforms:
+  ubuntu@26.04:amd64:
   ubuntu@22.04:amd64:
   ubuntu@24.04:amd64:
 

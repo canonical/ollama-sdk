@@ -92,7 +92,7 @@ curl http://localhost:11434/api/generate -d '{
 
 - [Ollama official documentation](https://github.com/ollama/ollama/blob/main/README.md)
 - [Ollama API reference](https://docs.ollama.com/api)
-- [Workshop documentation](https://canonical-workshop.readthedocs-hosted.com/latest/)
+- [Workshop documentation](https://ubuntu.com/workshop/docs/)
 
 ---
 
@@ -100,7 +100,7 @@ curl http://localhost:11434/api/generate -d '{
 
 - Ollama community: [Ollama Discord](https://discord.com/invite/ollama)
 - Workshop forum:
-  [Workshop Discourse](https://discourse.canonical.com/c/engineering/workshops/34)
+  [Discourse](https://discourse.ubuntu.com/)
 - Please review our
   [Code of Conduct](https://ubuntu.com/community/ethos/code-of-conduct) before
   participating.

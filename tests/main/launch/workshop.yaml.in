@@ -1,0 +1,4 @@
+name: test-ollama
+base: ${BASE}
+sdks:
+  - name: ollama

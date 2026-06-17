@@ -1,0 +1,25 @@
+project: ollama
+
+path: /home/ubuntu/project
+
+backends:
+  lxd:
+    systems:
+      - ubuntu-22.04:
+          username: ubuntu
+          vm: true
+      - ubuntu-24.04:
+          username: ubuntu
+          vm: true
+      - ubuntu-26.04:
+          username: ubuntu
+          vm: true
+
+environment:
+  BASE/jammy: ubuntu@22.04
+  BASE/noble: ubuntu@24.04
+  BASE/resolute: ubuntu@26.04
+
+suites:
+  main/:
+    summary: Test the ollama SDK inside a workshop

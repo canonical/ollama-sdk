@@ -1,0 +1,15 @@
+summary: Verify ollama is on PATH and reports version
+
+prepare: |
+  envsubst '${BASE}' <workshop.yaml.in >workshop.yaml
+  workshop launch
+
+restore: |
+  workshop remove || true
+
+execute: |
+  workshop exec -- which ollama
+  workshop exec -- ollama --version
+
+debug: |
+  workshop exec -- echo \$PATH || true

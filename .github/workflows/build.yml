@@ -19,7 +19,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - runs-on: [self-hosted, linux, jammy, x64, xlarge]
-          - runs-on: [self-hosted, linux, jammy, ARM64, xlarge]
+          - run-tests: true
+            runs-on: [self-hosted, linux, jammy, x64, xlarge]
+          - run-tests: false
+            runs-on: [self-hosted, linux, jammy, ARM64, xlarge]
     with:
+      run-tests: ${{ matrix.run-tests }}
       runs-on: ${{ toJSON(matrix.runs-on) }}

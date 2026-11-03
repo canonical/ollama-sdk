@@ -26,3 +26,6 @@ jobs:
     with:
       run-tests: ${{ matrix.run-tests }}
       runs-on: ${{ toJSON(matrix.runs-on) }}
+      # TODO: make this a more sensible size when we can directly control the
+      # workshop storage pool size.
+      test-disk-size: 256GiB

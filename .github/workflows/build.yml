@@ -16,3 +16,16 @@ concurrency:
 jobs:
   build:
     uses: canonical/sdkcraft-actions/.github/workflows/build.yml@main
+    strategy:
+      matrix:
+        include:
+          - run-tests: true
+            runs-on: [self-hosted, linux, jammy, x64, xlarge]
+          - run-tests: false
+            runs-on: [self-hosted, linux, jammy, ARM64, xlarge]
+    with:
+      run-tests: ${{ matrix.run-tests }}
+      runs-on: ${{ toJSON(matrix.runs-on) }}
+      # TODO: make this a more sensible size when we can directly control the
+      # workshop storage pool size.
+      test-disk-size: 256GiB
